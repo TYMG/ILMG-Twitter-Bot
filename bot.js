@@ -4,17 +4,31 @@ var config = require('./config.js');
 
 var Twitter = new twit(config);
 
-var tweetHelloWorld = function() {
-    var tweet = {
-        status:'System.out.println("Hello World")'
+/**
+ * The retweetILoveMattGreen method should retweet
+ *
+ * I Love You Too @Username
+ *
+ * Search Criteria
+ *
+ */
+var retweetILoveMattGreen = function () {
+    var query = {
+
     }
-    Twitter.post('statuses/update', tweet, function(err,data,response){
-           if(err){
+}
+
+var tweetHelloWorld = function () {
+    var tweet = {
+        status: 'System.out.println("Hello World")'
+    }
+    Twitter.post('statuses/update', tweet, function (err, data, response) {
+        if (err) {
             console.log("Error in Tweeting");
-           } else{
-               console.log("First Tweet Sent!")
-           }
+        } else {
+            console.log("First Tweet Sent!")
         }
+    }
     );
 }
 
